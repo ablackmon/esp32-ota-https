@@ -435,7 +435,7 @@ static int wifi_tls_cert_pinning(wifi_tls_context_t *ctx)
     
     // Allocate memory to store the actual and the expected public keys.
     
-    int bufSize = 512; // in practice, the length was 294 bytes
+    int bufSize = 768; // latest certs now require a larger buffer.
     uint8_t *certExpectedPubKey = calloc(bufSize, 1);
     uint8_t *certActualPubKey = calloc(bufSize, 1);
     if (!certExpectedPubKey || !certActualPubKey) {
